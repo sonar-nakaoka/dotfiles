@@ -3,6 +3,9 @@
 format = """
 [](#4E1F3D)\
 $os\
+${custom.gitbash}\
+${custom.wsl}\
+$shell\
 $username\
 [](bg:#7B2C4E fg:#4E1F3D)\
 $directory\
@@ -161,3 +164,27 @@ disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "fg:#FFFFFF bg:#8B9BC7"
 format = '[  $time ]($style)'
+
+[shell]
+disabled = false
+bash_indicator = ""
+zsh_indicator = ""
+powershell_indicator = ""
+pwsh_indicator = ""
+cmd_indicator = ""
+style = "fg:#FFFFFF bg:#4E1F3D"
+format = '[$indicator]($style)'
+
+[custom.gitbash]
+command = 'echo ""'
+when = 'test -n "$MSYSTEM"'
+shell = ["bash", "--noprofile", "--norc"]
+style = "fg:#FFFFFF bg:#4E1F3D"
+format = '[ $output ]($style)'
+
+[custom.wsl]
+command = 'echo ""'
+when = 'test -n "$WSL_DISTRO_NAME"'
+shell = ["bash", "--noprofile", "--norc"]
+style = "fg:#FFFFFF bg:#4E1F3D"
+format = '[ $output ]($style)'
