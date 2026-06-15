@@ -18,4 +18,4 @@ grep -qxF "$LINE" "$HOME/.bashrc" || echo "$LINE" >> "$HOME/.bashrc"
 
 # ホームディレクトリにclaude個人用ディレクトリを作成
 mkdir -p "$HOME/.claude"
-ln -sf "$DOTFILES_DIR/.skills" "$HOME/.claude/skills"
+ln -sf "$DOTFILES_DIR/skills" "$HOME/.claude/skills"
