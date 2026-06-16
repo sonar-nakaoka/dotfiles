@@ -17,6 +17,7 @@ LINE='[ -f ~/dotfiles/.bashrc.local ] && source ~/dotfiles/.bashrc.local'
 grep -qxF "$LINE" "$HOME/.bashrc" || echo "$LINE" >> "$HOME/.bashrc"
 
 # git submodule を初期化して更新(--remoteでsubmodule側リポジトリの最新を取る)
+# submoduleを手動で更新するときは git submodule update --remote --merge
 git -C "$DOTFILES_DIR" submodule update --init --remote --merge skills
 # ホームディレクトリにclaude個人用ディレクトリを作成
 mkdir -p "$HOME/.claude"
