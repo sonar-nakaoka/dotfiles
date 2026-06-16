@@ -16,8 +16,8 @@ ln -sf "$DOTFILES_DIR/.config/starship.toml" "$HOME/.config/starship.toml"
 LINE='[ -f ~/dotfiles/.bashrc.local ] && source ~/dotfiles/.bashrc.local'
 grep -qxF "$LINE" "$HOME/.bashrc" || echo "$LINE" >> "$HOME/.bashrc"
 
-# git submodule を初期化して更新
-git -C "$DOTFILES_DIR" submodule update --init --recursive
+# git submodule を初期化して更新(--remoteでsubmodule側リポジトリの最新を取る)
+git -C "$DOTFILES_DIR" submodule update --init --remote --merge skills
 # ホームディレクトリにclaude個人用ディレクトリを作成
 mkdir -p "$HOME/.claude"
 ln -sf "$DOTFILES_DIR/skills" "$HOME/.claude/"
